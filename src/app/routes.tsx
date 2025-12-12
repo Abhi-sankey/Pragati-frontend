@@ -1,17 +1,21 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { DashboardPage } from '../features/dashboard/pages/DashboardPage';
-import App from '../App';
+import { Layout } from '../components/Layout';
+import { UsersPage } from '../features/users/pages/UsersPage';
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <App />,
+        element: <Layout />,
         children: [
             {
                 path: '/',
                 element: <DashboardPage />,
             },
-            // Other routes will go here
+            {
+                path: '/users',
+                element: <UsersPage />,
+            },
         ],
     },
 ]);
